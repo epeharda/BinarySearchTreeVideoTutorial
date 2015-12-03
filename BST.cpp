@@ -99,7 +99,7 @@ void BST::PrintInOrderPrivate(node* Ptr)
 
 BST::node* BST::ReturnNode(int key)
 {
-	ReturnNodePrivate(key, root);
+	return ReturnNodePrivate(key, root);
 }
 
 BST::node* BST::ReturnNodePrivate(int key, node* Ptr)
