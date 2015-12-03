@@ -11,11 +11,16 @@ private:
 
 	node* root;
 
+	void AddLeafPrivate(int key, node* Ptr);
+
 //accesible everywhere - main.cpp can see this
 public:
 	BST();
 
 	//this will create a leaf node and will
 	node* CreateLeaf(int key);
+
+	//creating a function to add leaf
+	void AddLeaf(int key);
 
 };
