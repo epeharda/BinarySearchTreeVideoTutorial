@@ -41,7 +41,7 @@ void BST::AddLeafPrivate(int key, node* Ptr)
 	{
 		if(Ptr-> left != NULL)
 		{
-			AddLeafPrivate(key, Ptr);
+			AddLeafPrivate(key, Ptr->left);
 		}
 		else
 		{
@@ -52,16 +52,50 @@ void BST::AddLeafPrivate(int key, node* Ptr)
 	{
 		if(Ptr-> right != NULL)
 		{
-			AddLeafPrivate(key, Ptr);
+			AddLeafPrivate(key, Ptr->right);
 		}
 		else
 		{
 			Ptr->right = CreateLeaf(key);
 		}
 	}
+	else
+	{
+		cout << "The key " << key << " has already been added to the tree\n";
+	}
 }
 
+void BST::PrintInOrder()
+{
+	PrintInOrderPrivate(root);
+}
 
+void BST::PrintInOrderPrivate(node* Ptr)
+{
+	if(root != NULL)
+	{
+		//1 - Go Left
+		if(Ptr->left != NULL)
+		{
+			PrintInOrderPrivate(Ptr->left);
+		}
+
+		//2 - Process Node, in this case print
+		cout << Ptr -> key << "  ";
+
+		//3 - Go Right
+		if(Ptr->right != NULL)
+		{
+			PrintInOrderPrivate(Ptr->right);
+		}
+	}
+	else
+	{
+		cout << "The tree is empty.\n";
+	}
+
+
+}
 
 
 

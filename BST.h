@@ -13,6 +13,8 @@ private:
 
 	void AddLeafPrivate(int key, node* Ptr);
 
+	void PrintInOrderPrivate(node* Ptr);
+
 //accesible everywhere - main.cpp can see this
 public:
 	BST();
@@ -22,5 +24,8 @@ public:
 
 	//creating a function to add leaf
 	void AddLeaf(int key);
+
+	//in order traversal and print
+	void PrintInOrder();
 
 };
