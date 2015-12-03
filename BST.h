@@ -15,6 +15,8 @@ private:
 
 	void PrintInOrderPrivate(node* Ptr);
 
+	node* ReturnNodePrivate(int key, node* Ptr);
+
 //accesible everywhere - main.cpp can see this
 public:
 	BST();
@@ -27,5 +29,8 @@ public:
 
 	//in order traversal and print
 	void PrintInOrder();
+
+	//helper function to return a node value
+	node* ReturnNode(int key);
 
 };
